@@ -1,0 +1,14 @@
+name: trefoil
+version: 0.1.0
+
+authors:
+  - Matt <matthew.b.carey@gmail.com>
+
+development_dependencies:
+  webmock:
+    github: manastech/webmock.cr
+    branch: master
+
+crystal: 0.27.2
+
+license: MIT
