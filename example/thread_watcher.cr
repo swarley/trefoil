@@ -15,7 +15,7 @@ thread.watch(interval: 15.seconds) do |new_posts|
     img = post.image
     next nil unless img
     img.url
-})
+  })
 
   true
 end

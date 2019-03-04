@@ -3,8 +3,6 @@ require "./client"
 require "./post"
 
 module Trefoil
-
-
   struct Thread
     struct Deconstructor
       include JSON::Serializable
@@ -29,7 +27,6 @@ module Trefoil
     end
 
     def watch(interval : Time::Span, async : Bool = false, &block : Array(Post) -> _)
-
       if async
         spawn do
           watch_loop(interval, &block)
