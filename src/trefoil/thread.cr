@@ -11,6 +11,7 @@ module Trefoil
 
     getter op : Post?
     getter id
+    getter board
 
     def initialize(@client : Client, @board : Board, @id : UInt32)
     end
