@@ -125,6 +125,5 @@ module Trefoil
     def op_url : String
       "https://boards.4chan.org/#{@board.name}/thread/#{@info.resto == 0 ? @info.no : @info.resto}"
     end
-
   end
 end
