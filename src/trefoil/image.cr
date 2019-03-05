@@ -41,9 +41,5 @@ module Trefoil
     def url
       CDN_URL + "#{board}/#{tim}#{ext}"
     end
-
-    def get
-      HTTP::Client.get(url)
-    end
   end
 end
