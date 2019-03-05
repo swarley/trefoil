@@ -33,8 +33,8 @@ module Trefoil
   struct PostInfo
     include JSON::Serializable
 
-    getter no : UInt32
-    getter resto : UInt32
+    getter no : Int32
+    getter resto : Int32
 
     @[JSON::Field(converter: Trefoil::Converters::IntToBool)]
     getter sticky : Bool = false
@@ -58,40 +58,40 @@ module Trefoil
     getter country_name : String?
     getter sub : String?
     getter com : String?
-    getter tim : UInt32?
+    getter tim : Int32?
     getter filename : String?
     getter ext : String?
-    getter fsize : UInt32?
+    getter fsize : Int32?
     getter md5 : String?
-    getter w : UInt32?
-    getter h : UInt32?
-    getter tn_w : UInt32?
-    getter tn_h : UInt32?
+    getter w : Int32?
+    getter h : Int32?
+    getter tn_w : Int32?
+    getter tn_h : Int32?
 
     @[JSON::Field(converter: Trefoil::Converters::IntToBool)]
     getter filedeleted : Bool?
     @[JSON::Field(converter: Trefoil::Converters::IntToBool)]
     getter spoiler : Bool?
 
-    getter custom_spoilers : UInt8?
-    getter omitted_posts : UInt32?
-    getter omitted_images : UInt32?
-    getter replies : UInt32?
-    getter images : UInt32?
+    getter custom_spoilers : Int32?
+    getter omitted_posts : Int32?
+    getter omitted_images : Int32?
+    getter replies : Int32?
+    getter images : Int32?
 
     @[JSON::Field(converter: Trefoil::Converters::IntToBool)]
     getter bumplimit : Bool = false
     @[JSON::Field(converter: Trefoil::Converters::IntToBool)]
     getter imagelimit : Bool = false
 
-    getter capcode_replies : Hash(String, Array(UInt32))?
+    getter capcode_replies : Hash(String, Array(Int32))?
 
     @[JSON::Field(converter: Trefoil::Converters::UnixTime)]
     getter last_modified : Time?
 
     getter tag : String?
     getter semantic_url : String?
-    getter since4pass : UInt32?
+    getter since4pass : Int32?
 
     getter last_replies : Array(PostInfo)?
   end

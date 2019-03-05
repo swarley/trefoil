@@ -13,7 +13,7 @@ module Trefoil
     getter id
     getter board
 
-    def initialize(@client : Client, @board : Board, @id : UInt32)
+    def initialize(@client : Client, @board : Board, @id : Int32)
     end
 
     def initialize(@client : Client, @board : Board, op_info : PostInfo)

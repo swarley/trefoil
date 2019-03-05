@@ -4,25 +4,25 @@ require "./catalog"
 
 module Trefoil
   struct BoardInfo
-    alias Cooldowns = {threads: UInt16, replies: UInt16, images: UInt16}
+    alias Cooldowns = {threads: Int32, replies: Int32, images: Int32}
     include JSON::Serializable
 
     @[JSON::Field(key: "board")]
     getter name : String
     getter title : String
-    getter ws_board : UInt8
-    getter pages : UInt8
-    getter max_filesize : UInt32
-    getter max_webm_filesize : UInt32
-    getter max_comment_chars : UInt16
-    getter max_webm_duration : UInt16
-    getter bump_limit : UInt16
-    getter image_limit : UInt16
+    getter ws_board : Int32
+    getter pages : Int32
+    getter max_filesize : Int32
+    getter max_webm_filesize : Int32
+    getter max_comment_chars : Int32
+    getter max_webm_duration : Int32
+    getter bump_limit : Int32
+    getter image_limit : Int32
     getter cooldowns : Cooldowns
     getter meta_description : String
-    getter? spoilers : UInt8?
-    getter? custom_spoilers : UInt8?
-    getter is_archived : UInt8?
+    getter? spoilers : Int32?
+    getter? custom_spoilers : Int32?
+    getter is_archived : Int32?
   end
 
   struct Board

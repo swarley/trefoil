@@ -7,28 +7,28 @@ module Trefoil
       return nil if info.filename.nil?
 
       Image.new(
-        info.w.as(UInt32),
-        info.h.as(UInt32),
-        info.tn_w.as(UInt32),
-        info.tn_h.as(UInt32),
+        info.w.as(Int32),
+        info.h.as(Int32),
+        info.tn_w.as(Int32),
+        info.tn_h.as(Int32),
         info.md5.as(String),
-        info.fsize.as(UInt32),
+        info.fsize.as(Int32),
         info.ext.as(String),
         info.filename.as(String),
-        info.tim.as(UInt32),
+        info.tim.as(Int32),
         post.board.name
       )
     end
 
-    getter width : UInt32
-    getter height : UInt32
-    getter thumbnail_width : UInt32
-    getter thumbnail_height : UInt32
+    getter width : Int32
+    getter height : Int32
+    getter thumbnail_width : Int32
+    getter thumbnail_height : Int32
     getter md5 : String
-    getter fsize : UInt32
+    getter fsize : Int32
     getter ext : String
     getter filename : String
-    getter tim : UInt32
+    getter tim : Int32
     getter board : String
 
     def initialize(@width, @height, @thumbnail_width, @thumbnail_height, @md5, @fsize, @ext, @filename, @tim, @board)
