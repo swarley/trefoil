@@ -19,11 +19,11 @@ describe Trefoil::Post do
 
   describe "#image?" do
     it "should return true if there is an image" do
-      image_post.image?.should be_true
+      image_post.image?.should be_truthy
     end
 
     it "should return false is there is not an image" do
-      text_post.image?.should be_false
+      text_post.image?.should be_falsey
     end
   end
 

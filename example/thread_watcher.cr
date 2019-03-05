@@ -17,5 +17,9 @@ thread.watch(interval: 15.seconds) do |new_posts|
     img.url
   })
 
-  true
+  if ARGV.includes? "autodie"
+    false
+  else
+    true
+  end
 end

@@ -2,7 +2,7 @@ module Trefoil
   struct Image
     CDN_URL = "https://i.4cdn.org/"
 
-    def self.from_post(post : Trefoil::Post) : Image | Nil
+    def self.from_post(post : Post) : Image | Nil
       info = post.info
       return nil if info.filename.nil?
 

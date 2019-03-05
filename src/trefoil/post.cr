@@ -100,19 +100,31 @@ module Trefoil
     getter info
     getter board
 
-    def initialize(@client : Trefoil::Client, @board : Board, @info : PostInfo)
+    def initialize(@client : Client, @board : Board, @info : PostInfo)
       if @info.filename
-        @image = Trefoil::Image.from_post(self)
+        @image = Image.from_post(self)
       end
     end
 
-    def image : Trefoil::Image | Nil
-      return Trefoil::Image.from_post(self) if @info.filename
+    def image : Image | Nil
+      return Image.from_post(self) if @info.filename
       nil
     end
 
     def image? : Bool
       !@info.filename.nil?
     end
+
+    # Link directly to this comment. Links to the thread itself if this post is the OP
+    def link : String
+      return op_url if @info.resto == 0
+      "https://boards.4chan.org/#{@board.name}/thread/#{@info.resto}#p#{@info.no}"
+    end
+
+    # Link to the OP of the thread this post is in.
+    def op_url : String
+      "https://boards.4chan.org/#{@board.name}/thread/#{@info.resto == 0 ? @info.no : @info.resto}"
+    end
+
   end
 end
